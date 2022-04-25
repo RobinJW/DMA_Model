@@ -1,14 +1,10 @@
 function [Y_tt, Y_st, Y_ss] =... 
-    DMA_admittance(f, a, b, l, S_mu, xyz_dma, xyz_rf)
+    DMA_admittance(f, a, b, l, S_mu, xyz_dma, xyz_rf, mu, epsilon)
 % Computes the mutual admittances in the DMA topology where all actors are
 % modelled as magnetic dipoles
-%
-% RJW 03/02/2022 - Added length variable for normalization purposes.
-%
 
-%% Physical constants - Dont edit
-mu = 1.25663706212*1E-6;
-epsilon  = 8.8541878128*1E-12;
+
+%% Physical constants
 k = 2*pi*f*sqrt(epsilon*mu);
 
 kx = sqrt(k^2 - (pi/a)^2);    % only for TE_10
